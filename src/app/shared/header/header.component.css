@@ -1,0 +1,380 @@
+.container {
+  width: 100%;
+  height: 100px;
+  box-shadow: 0 3px 15px rgba(152, 152, 152, 0.2);
+  color: #A46A00;
+  background: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Логотип */
+.logo-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 1001;
+}
+
+.logo-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo-title {
+  color: #FFC368;
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 28.8px;
+  letter-spacing: 1.39px;
+  margin: 0;
+}
+
+/* Десктопная навигация */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+.desktop-nav ul li {
+  position: relative;
+}
+
+.desktop-nav ul li a {
+  color: #A46A00;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.desktop-nav ul li a:hover {
+  color: #FFC368;
+}
+
+.desktop-nav ul li a.active {
+  color: #FFC368;
+}
+
+.desktop-nav ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #FFC368;
+  border-radius: 1px;
+}
+
+.desktop-nav ul li:hover {
+  cursor: pointer;
+}
+
+/* Гамбургер-кнопка (скрыта на десктопе) */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  z-index: 1001;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+}
+
+.hamburger-inner {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 18px;
+}
+
+.hamburger-line {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #A46A00;
+  border-radius: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  left: 0;
+}
+
+.hamburger-line:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-line:nth-child(3) {
+  bottom: 0;
+}
+
+/* Анимация при открытии */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: translateY(-6px) rotate(45deg);
+  top: 50%;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  top: 50%;
+}
+
+/* Мобильное меню (оверлей) */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Мобильная навигация */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: white;
+  padding: 100px 30px 30px;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.mobile-menu-overlay.active .mobile-nav {
+  transform: translateX(0);
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.mobile-nav ul li {
+  margin-bottom: 20px;
+}
+
+.mobile-nav ul li a {
+  color: #A46A00;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 0;
+  display: block;
+  border-bottom: 1px solid rgba(164, 106, 0, 0.1);
+  transition: color 0.3s ease;
+}
+
+.mobile-nav ul li a:hover,
+.mobile-nav ul li a.active {
+  color: #FFC368;
+}
+
+/* Футер мобильного меню */
+.mobile-menu-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(164, 106, 0, 0.1);
+}
+
+.contact-info {
+  color: #A46A00;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info .phone {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Медиа-запросы */
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+  .sub-container {
+    padding: 0 30px;
+  }
+  
+  .desktop-nav ul {
+    gap: 30px;
+  }
+}
+
+/* Мобильные устройства (< 768px) */
+@media (max-width: 768px) {
+  .container {
+    height: 80px;
+  }
+  
+  .sub-container {
+    height: 80px;
+    padding: 0 20px;
+  }
+  
+  .logo-container img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logo-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  /* Скрываем десктопную навигацию */
+  .desktop-nav {
+    display: none;
+  }
+  
+  /* Показываем гамбургер-кнопку */
+  .hamburger-btn {
+    display: block;
+  }
+  
+  .mobile-nav {
+    padding-top: 80px;
+  }
+}
+
+/* Маленькие мобильные (< 480px) */
+@media (max-width: 480px) {
+  .container {
+    height: 70px;
+  }
+  
+  .sub-container {
+    height: 70px;
+    padding: 0 15px;
+  }
+  
+  .logo-container img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .logo-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
+  .hamburger-btn {
+    width: 36px;
+    height: 36px;
+    padding: 10px;
+  }
+  
+  .hamburger-inner {
+    width: 22px;
+    height: 16px;
+  }
+  
+  .mobile-nav {
+    width: 85%;
+    padding: 70px 20px 20px;
+  }
+  
+  .mobile-nav ul li a {
+    font-size: 16px;
+  }
+  
+  .contact-info p {
+    font-size: 13px;
+  }
+  
+  .contact-info .phone {
+    font-size: 15px;
+  }
+}
+
+/* Очень маленькие экраны (< 360px) */
+@media (max-width: 360px) {
+  .logo-title {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .hamburger-btn {
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+  }
+  
+  .hamburger-inner {
+    width: 20px;
+    height: 14px;
+  }
+  
+  .mobile-nav {
+    width: 90%;
+    padding: 70px 15px 15px;
+  }
+}
+
+/* Большие экраны (> 1280px) */
+@media (min-width: 1281px) {
+  .sub-container {
+    padding: 0;
+  }
+}

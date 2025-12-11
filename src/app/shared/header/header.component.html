@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="sub-container">
+    <!-- Логотип -->
+    <div class="logo-container">
+      <img src="assets/images/pizza.png" alt="Pizza Cheff Logo">
+      <p class="logo-title">pizza <br> cheff</p>
+    </div>
+
+    <!-- Кнопка гамбургер-меню для мобильных -->
+    <button class="hamburger-btn" 
+            (click)="toggleMenu()" 
+            [class.active]="isMenuOpen"
+            aria-label="Меню"
+            aria-expanded="isMenuOpen">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Навигация -->
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Пиццы</a></li>
+        <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Напитки</a></li>
+        <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Доставка и оплата</a></li>
+        <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <!-- Мобильное меню (оверлей) -->
+    <div class="mobile-menu-overlay" [class.active]="isMenuOpen" (click)="closeMenu()">
+      <nav class="mobile-nav" aria-label="Мобильная навигация" (click)="$event.stopPropagation()">
+        <ul>
+          <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Пиццы</a></li>
+          <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Напитки</a></li>
+          <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Доставка и оплата</a></li>
+          <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

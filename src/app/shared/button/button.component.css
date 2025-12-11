@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background-color: #FFAF18;
+  color: #010303;
+}
+
+.button:hover {
+  background-color: #df9813;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(255, 153, 0, 0.3);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.3);
+}

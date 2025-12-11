@@ -1,0 +1,27 @@
+.pizza-card {
+  width: 265px;
+  height: 356px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 3px 15px rgba(152, 152, 152, 0.2);
+}
+
+.title {
+  color: #372300;
+  font-size: 17px;
+}
+
+.text {
+  text-align: center;
+  color: #171919;
+  font-size: 14px;
+}
+
+.pizza-card img{
+  width: 210px;
+  height: 150px;
+}
